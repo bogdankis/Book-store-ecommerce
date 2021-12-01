@@ -10,6 +10,7 @@ namespace book_store_ecommerce.Models
         public String FullName { get; set; }
         public String Bio { get; set; }
 
-
+        //Relationships
+        public List<Writer_Book> Writers_Books { get; set;}
     }
 }

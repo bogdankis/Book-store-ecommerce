@@ -10,6 +10,6 @@ namespace book_store_ecommerce.Models
         public String Name { get; set; }
         public String Description { get; set; }
        
-
+        public List<Book> Books { get; set;}
     }
 }
