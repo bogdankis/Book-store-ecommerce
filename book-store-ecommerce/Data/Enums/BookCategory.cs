@@ -2,9 +2,12 @@
 {
     public enum BookCategory
     {
-      Horror = 1,
-      Drama,
-      Thriller,
-      Educational
+      Novel = 1,
+      Fiction,
+      Biography,
+      Poems,
+      Drama, 
+      Autobiography,
+      Psychology
     }
 }

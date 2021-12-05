@@ -8,6 +8,7 @@ namespace book_store_ecommerce.Models
     {
         [Key]
         public int Id { get; set; }
+        public String Name { get; set; }    
         public String Description  { get; set; }
         public double price { get; set; }
         public String Writer { get; set; }
