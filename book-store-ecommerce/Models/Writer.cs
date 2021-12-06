@@ -6,8 +6,14 @@ namespace book_store_ecommerce.Models
     {
         [Key]
         public int Id { get; set; }
+
+        [Display(Name ="Writer Picture URL")]
         public String ProfileImageUrl { get; set; }
+
+        [Display(Name = "FullName")]
         public String FullName { get; set; }
+
+        [Display(Name = "Biography")]
         public String Bio { get; set; }
 
         //Relationships

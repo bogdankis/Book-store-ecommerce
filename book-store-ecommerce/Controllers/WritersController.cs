@@ -15,7 +15,7 @@ namespace book_store_ecommerce.Controllers
         public IActionResult Index()
         {
             var data = _context.Writers.ToList();
-            return View();
+            return View(data);
         }
     }
 }

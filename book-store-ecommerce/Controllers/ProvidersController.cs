@@ -11,7 +11,7 @@ namespace book_store_ecommerce.Controllers
 
         public ProvidersController(AppDbContext context)  //inject db context in constructor
         {
-            {
+            
             _context = context;
         }
         public async Task<IActionResult> Index()
