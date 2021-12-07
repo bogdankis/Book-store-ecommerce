@@ -7,7 +7,7 @@ namespace book_store_ecommerce.Models
         [Key]
         public int Id { get; set; }
 
-        [Display(Name ="Writer Picture URL")]
+        [Display(Name ="Writer Picture")]
         public String ProfileImageUrl { get; set; }
 
         [Display(Name = "FullName")]

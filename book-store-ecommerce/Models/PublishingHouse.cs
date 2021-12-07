@@ -6,9 +6,15 @@ namespace book_store_ecommerce.Models
     {
         [Key]
         public int id { get; set; }
-        public String ProfilePictureUrl { get; set; }
+
+        [Display(Name = "Profile Picture")]
+        public string ProfilePictureUrl { get; set; }
+
+        [Display(Name = "Full Name")]
         public string FullName { get; set; }
-        public String About { get; set; }
+
+        [Display(Name = "About")]
+        public string About { get; set; }
 
         //Relationships
         public List<Book> Books { get; set; }

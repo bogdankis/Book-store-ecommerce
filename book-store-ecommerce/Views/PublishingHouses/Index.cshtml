@@ -1,33 +1,35 @@
-﻿@model IEnumerable<Writer>
+﻿@model IEnumerable<PublishingHouse>
 
 @{
-    ViewData["Name"] = "List of Writers";
+    ViewData["Title"] = "List of Publishing Houses";
 }
 
-<div class="row">
-    <div class="col-md-8 offset-md-2">
+<div class = "row">
+    <div class ="col-md-8 offset-md-2">
 
         <table class="table">
             <thead>
                 <tr class="text-center">
-                    <th>@Html.DisplayNameFor(model => model.ProfileImageUrl)</th>
+                    <th>@Html.DisplayNameFor(model => model.ProfilePictureUrl)</th>
                     <th>@Html.DisplayNameFor(model => model.FullName)</th>
-                    <th>@Html.DisplayNameFor(model => model.Bio)</th>
-                    <th>Actions</th>
-                </tr>   
+                    <th>@Html.DisplayNameFor(model => model.About)</th>
+
+                    <th>actions</th>
+                </tr>
             </thead>
-            <tbody>
+
+           <tbody>
                 @foreach(var item in Model)
                 {
                   <tr>
                       <td class="align-middle">
-                          <img class="rounded-circle" src="@item.ProfileImageUrl" alt="@item.FullName" style="width: 150px"/>
+                          <img class="rounded-circle" src="@item.ProfilePictureUrl" alt="@item.FullName" style="width: 150px"/>
                       </td> 
                       <td class="align-middle">
                           @Html.DisplayFor(modelItem => item.FullName)
                       </td>
                       <td class="align-middle">
-                          @Html.DisplayFor(modelItem => item.Bio)
+                          @Html.DisplayFor(modelItem => item.About)
                       </td>
                       <td class="align-middle">
                           <a class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i>Edit </a> |
@@ -39,8 +41,6 @@
                 }
             </tbody>
 
-
         </table>
-
     </div>
 </div>

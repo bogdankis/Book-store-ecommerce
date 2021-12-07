@@ -249,7 +249,7 @@ namespace book_store_ecommerce.Data
                         {
                             ProfilePictureUrl = "https://i.ibb.co/1MGpvSF/logo-pub4.jpg",
                             FullName = "Hanging Loose Press",
-                            About = "",
+                            About = "The first issue of Hanging Loose magazine was published in 1966.",
                         },
 
                         new PublishingHouse()
