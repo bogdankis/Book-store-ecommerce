@@ -17,7 +17,7 @@ namespace book_store_ecommerce.Controllers
         public async Task<IActionResult> Index()
         {
             var providers = await _context.Providers.ToListAsync();
-            return View();
+            return View(providers);
         }
     }
 }
