@@ -8,12 +8,24 @@ namespace book_store_ecommerce.Models
     {
         [Key]
         public int Id { get; set; }
+
+        [Display(Name = "Name")]
         public String Name { get; set; }    
+
+        [Display(Name = "Description")]
         public String Description  { get; set; }
+
+        [Display(Name = "Price")]
         public double price { get; set; }
+
+        [Display(Name = "Writer")]
         public String Writer { get; set; }
         public BookCategory BookCategory { get; set; }
+
+        [Display(Name = "ISBN")]
         public String ISBN  { get; set; }
+
+        [Display(Name = "Image")]
         public String ImageUrl { get; set; }
 
         //Relationships

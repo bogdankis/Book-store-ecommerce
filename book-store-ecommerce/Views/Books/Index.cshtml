@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Book>
+@{
+   ViewData["Title"] = "List of Books";
+}
+
+<div class = "row">
+    @foreach(var item in Model)
+    {
+           <div class="col-md-4 col-xs-6 border-alert-primary mb-3"> 
+               <div class="card mb-3" style="max-width: 540px;">
+                   <div class="row g-0">
+                       <div class="col-md-12">
+                           <div class="card-header bg-white bg-info">
+                               <p class="card-text">
+                                   <h5 class="card-title">
+                                       Book Name Sample
+                                       <a class="text-white float-right"><i class="bi bi-pencil-square"></i></a>
+                                   </h5>
+                               </p>
+                           </div>
+                       </div>
+                       <div class="col-md-6">
+                           <img src="" width="100%" alt="">
+                       </div>
+                       <div class="col-md-6">
+                           <div class="card-body">
+                               <p class="cart-text">Name</p>
+                               <p class="cart-text"><b>Name: </b> Name Sample</p>
+                               <p class="cart-text">Description</p>
+                               <p class="cart-text">
+                                   <b>Status:</b>
+                                   status sample
+                               </p>
+
+                           </div>
+                       </div>
+                       <div class="col-md-12">
+                           <p class="card-text">
+                               <a class="btn btn-primary float-right"><i class="bi bi-eye-fill"></i>Show Details</a>
+                               <a class="btn btn-success text-white"><i class="bi bi-cart-plus"></i>Add to Cart($X.XX)</a>
+                           </p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+    }
+</div>
