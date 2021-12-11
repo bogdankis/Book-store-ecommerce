@@ -15,7 +15,7 @@ namespace book_store_ecommerce.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var allBooks = await _context.Books.ToListAsync();
+            var allBooks = await _context.Books.Include(n => n.Provider).OrderBy(n => n.Name).ToListAsync(); //order by name
             return View(allBooks);
         }
     }

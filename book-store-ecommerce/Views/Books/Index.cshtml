@@ -7,38 +7,51 @@
     @foreach(var item in Model)
     {
            <div class="col-md-4 col-xs-6 border-alert-primary mb-3"> 
-               <div class="card mb-3" style="max-width: 540px;">
+               <div class="card mb-3" style="max-width: 700px">
                    <div class="row g-0">
                        <div class="col-md-12">
-                           <div class="card-header bg-white bg-info">
+                           <div class="card-header text-white bg-info">
                                <p class="card-text">
                                    <h5 class="card-title">
-                                       Book Name Sample
+                                       @item.Name
                                        <a class="text-white float-right"><i class="bi bi-pencil-square"></i></a>
                                    </h5>
                                </p>
                            </div>
                        </div>
                        <div class="col-md-6">
-                           <img src="" width="100%" alt="">
+                           <img src="@item.ImageUrl" width="100%" alt="@item.Name">
                        </div>
                        <div class="col-md-6">
                            <div class="card-body">
-                               <p class="cart-text">Name</p>
-                               <p class="cart-text"><b>Name: </b> Name Sample</p>
-                               <p class="cart-text">Description</p>
-                               <p class="cart-text">
+                               <p class="cart-text">@item.Name</p>
+                               <p class="cart-text"><b>Writer: </b>@item.Writer</p>
+                               <p class="cart-text"><b>Provider: </b>@item.Provider.Name</p>
+                               <p class="cart-text"><b>ISBN: </b>@item.ISBN</p>
+                               <p class="cart-text"><b>Category: </b>@item.BookCategory</p>
+                 <!--              <p class="cart-text">
                                    <b>Status:</b>
-                                   status sample
+                                  if(item.Pieces == 0){
+                                       <span class="badge bg-succes text-white"> STOCK EMPTY</span>
+                                   }else if(item.Pieces <=5){
+                                       <span class="badge bg-succes text-white">LIMIT STOCK</span>
+                                   }else{
+                                       <span class="badge bg-succes text-white">IN STOCK</span>
+                                   }
                                </p>
+                               NOTE: MIGRATE DB AND UPDATE AFTER COLUMN PIECES in BOOK MODEL INSERTED
+                               -->
 
                            </div>
                        </div>
+
                        <div class="col-md-12">
-                           <p class="card-text">
-                               <a class="btn btn-primary float-right"><i class="bi bi-eye-fill"></i>Show Details</a>
-                               <a class="btn btn-success text-white"><i class="bi bi-cart-plus"></i>Add to Cart($X.XX)</a>
-                           </p>
+                           <div class="card-footer">
+                               <p class="card-text">
+                                   <a class="btn btn-primary float-right"><i class="bi bi-eye-fill"></i>Show Details</a>
+                                   <a class="btn btn-success text-white"><i class="bi bi-cart-plus"></i>Add to Cart($@item.price.ToString("c")</a>
+                               </p>
+                           </div>
                        </div>
                    </div>
                </div>
