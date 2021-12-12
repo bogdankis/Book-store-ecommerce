@@ -1,9 +1,12 @@
 using book_store_ecommerce.Data;
+using book_store_ecommerce.Data.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 String connString = builder.Configuration.GetConnectionString("DefaultConnectionString");
 
+//Services configuration
+builder.Services.AddScoped<IWritersService, WritersService>();//once per scope
 // Add services to the container.
 //
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connString));

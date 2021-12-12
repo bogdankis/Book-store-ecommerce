@@ -1,20 +1,21 @@
 ﻿using book_store_ecommerce.Data;
+using book_store_ecommerce.Data.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace book_store_ecommerce.Controllers
 {
     public class WritersController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IWritersService _service; 
 
-        public WritersController(AppDbContext context)  //inject db context in constructor
+        public WritersController(IWritersService service)  //inject db context in constructor
         {
-            _context = context;
+            _service = service;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var data = _context.Writers.ToList();
+            var data = await _service.GetAll();
             return View(data);
         }
     }
