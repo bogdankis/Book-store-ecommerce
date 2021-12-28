@@ -1865,11 +1865,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\PORTOFOLIU\\book-store-ecommerce\\book-store-ecommerce\\book-store-ecommerce.csproj",
+      "projectUniqueName": "D:\\portofolio\\Book-store-ecommerce\\book-store-ecommerce\\book-store-ecommerce.csproj",
       "projectName": "book-store-ecommerce",
-      "projectPath": "E:\\PORTOFOLIU\\book-store-ecommerce\\book-store-ecommerce\\book-store-ecommerce.csproj",
+      "projectPath": "D:\\portofolio\\Book-store-ecommerce\\book-store-ecommerce\\book-store-ecommerce.csproj",
       "packagesPath": "C:\\Users\\Meanwhile\\.nuget\\packages\\",
-      "outputPath": "E:\\PORTOFOLIU\\book-store-ecommerce\\book-store-ecommerce\\obj\\",
+      "outputPath": "D:\\portofolio\\Book-store-ecommerce\\book-store-ecommerce\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Meanwhile\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1931,7 +1931,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

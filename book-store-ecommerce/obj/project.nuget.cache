@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Xs1iGbvF2s5+1IB/zmloJpJmq5KkpoXnXFoKwicw615dwuwPD6j31zh9TJQ6biqyrfmx4XDdH+sJF+xODFTkCA==",
+  "dgSpecHash": "qJH8LOl/mJhAiu2dtfK40jpmvP9uoDoO1U4yrO5/YyqulL6uAMyWRnsxR3Ze4WHQ/RhdazPbv6H9fpt2FuswsQ==",
   "success": true,
-  "projectFilePath": "E:\\PORTOFOLIU\\book-store-ecommerce\\book-store-ecommerce\\book-store-ecommerce.csproj",
+  "projectFilePath": "D:\\portofolio\\Book-store-ecommerce\\book-store-ecommerce\\book-store-ecommerce.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Meanwhile\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Meanwhile\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

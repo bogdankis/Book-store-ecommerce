@@ -13,10 +13,15 @@ namespace book_store_ecommerce.Controllers
             _service = service;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index() //Show all actors
         {
             var data = await _service.GetAll();
             return View(data);
+        }
+        //Get: Actors/Create
+        public IActionResult Create() //create actor
+        {
+            return View();
         }
     }
 }
