@@ -10,9 +10,10 @@ namespace book_store_ecommerce.Data.Services
         {
             _context = context;
         }
-        public void Add(Writer writer)
+        public async Task AddAsync(Writer writer)
         {
-            throw new NotImplementedException();
+           await _context.Writers.AddAsync(writer);
+           await _context.SaveChangesAsync();
         }
 
         public void Delete(int id)
@@ -20,15 +21,16 @@ namespace book_store_ecommerce.Data.Services
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<Writer>> GetAll()
+        public async Task<IEnumerable<Writer>> GetAllAsync()
         {
             var result = await _context.Writers.ToListAsync();
             return result;
         }
 
-        public Writer GetById(int id)
+        public async Task<Writer> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var results = await _context.Writers.FirstOrDefaultAsync(n => n.Id == id);
+            return results;
         }
 
         public Writer Update(int id, Writer newWriter)

@@ -4,9 +4,9 @@ namespace book_store_ecommerce.Data.Services
 {
     public interface IWritersService
     {
-        Task<IEnumerable<Writer>> GetAll(); // fir async implementation
-        Writer GetById(int id);
-        void Add(Writer writer);
+        Task<IEnumerable<Writer>> GetAllAsync(); //  async implementation
+        Task<Writer> GetByIdAsync(int id);
+        Task AddAsync(Writer writer);
         Writer Update(int id, Writer newWriter);
         void Delete(int id);
     }
