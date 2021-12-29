@@ -7,7 +7,7 @@ namespace book_store_ecommerce.Data.Services
         Task<IEnumerable<Writer>> GetAllAsync(); //  async implementation
         Task<Writer> GetByIdAsync(int id);
         Task AddAsync(Writer writer);
-        Writer Update(int id, Writer newWriter);
-        void Delete(int id);
+        Task<Writer> UpdateAsync(int id, Writer newWriter);
+        Task DeleteAsync(int id);
     }
 }

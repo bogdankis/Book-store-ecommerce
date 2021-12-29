@@ -1,0 +1,69 @@
+﻿@model Writer
+
+@{
+    ViewData["Title"] = "Add a new writer";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1>Update Writer</h1>
+        </p>
+
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group text-center">
+                    <img class="border-info rounded-circle" style="max-width: 150px;" id="ProfilePicturePreview"/>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ProfileImageUrl" class="control-label"></label>
+                    <input asp-for="ProfileImageUrl" class="form-control"/>
+                    <span asp-validation-for="ProfileImageUrl" class="text-danger"></span>
+                </div>
+
+                
+                <div class="form-group">
+                    <label asp-for="FullName" class="control-label"></label>
+                    <input asp-for="FullName" class="form-control"/>
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+
+                
+                <div class="form-group">
+                    <label asp-for="Bio" class="control-label"></label>
+                    <input asp-for="Bio" class="form-control"/>
+                    <span asp-validation-for="Bio" class="text-danger"></span>
+                </div>
+
+                <div class="form-group d-flex justify-content-between pt-3">
+                                        <a class="btn btn-outline-secondary" asp-action="Index">Show All </a>
+                    <input type="submit" value="Update" class="btn btn-outline-success"/>
+                </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts{
+    <script>
+
+        $(document).ready(function () {
+             var output = document.getElementById('ProfilePicturePreview');  //calls element id
+             output.src = $("#ProfileImageUrl").val();   
+        })
+
+        $("#ProfileImageUrl").on("change",function(){    
+            var output = document.getElementById('ProfilePicturePreview');  //calls element id
+            output.src = $(this).val();   //return value
+        })
+    </script>
+}

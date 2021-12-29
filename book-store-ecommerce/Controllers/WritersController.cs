@@ -29,7 +29,7 @@ namespace book_store_ecommerce.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([Bind("ProfileImageUrl,FullName,Bio")] Writer writer)
         {
-            if (!ModelState.IsValid) //checks if models state required is valid - delete <Nullable>enable<Nullable> in order to work, only valid for .NET 6
+            if (!ModelState.IsValid)                 //checks if models state required is valid - delete <Nullable>enable<Nullable> in order to work, only valid for .NET 6
             {
                 return View(writer);
             }
@@ -38,6 +38,8 @@ namespace book_store_ecommerce.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        
+
         //Get: Writers/Details/1
         public async Task<IActionResult> Details(int id)
         {
@@ -45,10 +47,60 @@ namespace book_store_ecommerce.Controllers
 
             if (writerDetails == null)
             {
-                return View("Empty");
+                return View("NotFound");
             }
                 
             return View(writerDetails);
+        }
+
+
+        //Get: Writers/Edit/1
+        public async Task<IActionResult> Edit(int id)
+        {
+            var writerDetails = await _service.GetByIdAsync(id);
+
+            if (writerDetails == null)
+            {
+                return View("NotFound");
+            }
+            return View(writerDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ProfileImageUrl,FullName,Bio")] Writer writer)                     //edit writer
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(writer);
+            }
+            await _service.UpdateAsync(id, writer);
+            return RedirectToAction(nameof(Index));
+        }
+
+
+        //Get:Writers/Delete/1
+        public async Task<IActionResult> Delete(int id)
+        {
+            var writerDetails = await _service.GetByIdAsync(id);
+
+            if(writerDetails == null)
+            {
+                return View("NotFound");
+            }
+            return View(writerDetails);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var writerDetails = await _service.GetByIdAsync(id);
+
+            if (writerDetails == null)
+            {
+                return View("NotFound");
+            }
+            await _service.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
