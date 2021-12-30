@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using book_store_ecommerce.Data.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace book_store_ecommerce.Models
 {
-    public class Writer
+    public class Writer: IEntityBase
     {
         [Key]
         public int Id { get; set; }
