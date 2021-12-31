@@ -1,13 +1,13 @@
-﻿@model Writer
+﻿@model PublishingHouse
 
 @{
-    ViewData["Title"] = "Update writer";
+    ViewData["Title"] = "Update Publishing House";
 }
 
 <div class="row text">
     <div class="col-md-8 offset-2">
         <p>
-            <h1>Update Writer</h1>
+            <h1>Update Publishing House</h1>
         </p>
 
         <div class="row">
@@ -20,9 +20,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="ProfileImageUrl" class="control-label"></label>
-                    <input asp-for="ProfileImageUrl" class="form-control"/>
-                    <span asp-validation-for="ProfileImageUrl" class="text-danger"></span>
+                    <label asp-for="ProfilePictureUrl" class="control-label"></label>
+                    <input asp-for="ProfilePictureUrl" class="form-control"/>
+                    <span asp-validation-for="ProfilePictureUrl" class="text-danger"></span>
                 </div>
 
                 
@@ -34,9 +34,9 @@
 
                 
                 <div class="form-group">
-                    <label asp-for="Bio" class="control-label"></label>
-                    <input asp-for="Bio" class="form-control"/>
-                    <span asp-validation-for="Bio" class="text-danger"></span>
+                    <label asp-for="About" class="control-label"></label>
+                    <input asp-for="About" class="form-control"/>
+                    <span asp-validation-for="About" class="text-danger"></span>
                 </div>
 
                 <div class="form-group d-flex justify-content-between pt-3">
@@ -58,10 +58,10 @@
 
         $(document).ready(function () {
              var output = document.getElementById('ProfilePicturePreview');  //calls element id
-             output.src = $("#ProfileImageUrl").val();   
+             output.src = $("#ProfilePictureUrl").val();   
         })
 
-        $("#ProfileImageUrl").on("change",function(){    
+        $("#ProfilePictureUrl").on("change",function(){    
             var output = document.getElementById('ProfilePicturePreview');  //calls element id
             output.src = $(this).val();   //return value
         })

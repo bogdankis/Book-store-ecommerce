@@ -1,50 +1,47 @@
-﻿@model Writer
+﻿@model PublishingHouse
 
 @{
-    ViewData["Title"] = "Update writer";
+    ViewData["Title"] = "Details of the Publishing House";
 }
 
 <div class="row text">
     <div class="col-md-8 offset-2">
         <p>
-            <h1>Update Writer</h1>
+            <h1>Details for @Model.FullName</h1>
         </p>
 
         <div class="row">
             <div class="col-md-8 offset-2">
-                <form asp-action="Edit">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
 
                 <div class="form-group text-center">
                     <img class="border-info rounded-circle" style="max-width: 150px;" id="ProfilePicturePreview"/>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="ProfileImageUrl" class="control-label"></label>
-                    <input asp-for="ProfileImageUrl" class="form-control"/>
-                    <span asp-validation-for="ProfileImageUrl" class="text-danger"></span>
+                    <label asp-for="ProfilePictureUrl" class="control-label"></label>
+                    <input asp-for="ProfilePictureUrl" class="form-control" readonly/>
+                    <span asp-validation-for="ProfilePictureUrl" class="text-danger"></span>
                 </div>
 
                 
                 <div class="form-group">
                     <label asp-for="FullName" class="control-label"></label>
-                    <input asp-for="FullName" class="form-control"/>
+                    <input asp-for="FullName" class="form-control" readonly/>
                     <span asp-validation-for="FullName" class="text-danger"></span>
                 </div>
 
                 
                 <div class="form-group">
-                    <label asp-for="Bio" class="control-label"></label>
-                    <input asp-for="Bio" class="form-control"/>
-                    <span asp-validation-for="Bio" class="text-danger"></span>
+                    <label asp-for="About" class="control-label"></label>
+                    <textarea style="resize: none;" asp-for="About" class="form-control" readonly></textarea>
+                    <span asp-validation-for="About" class="text-danger"></span>
                 </div>
 
                 <div class="form-group d-flex justify-content-between pt-3">
                                         <a class="btn btn-outline-secondary" asp-action="Index">Show All </a>
-                    <input type="submit" value="Update" class="btn btn-outline-success"/>
+                                        <a class="btn btn-outline-success" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
                 </div>
-
-                </form>
 
             </div>
         </div>
@@ -58,12 +55,8 @@
 
         $(document).ready(function () {
              var output = document.getElementById('ProfilePicturePreview');  //calls element id
-             output.src = $("#ProfileImageUrl").val();   
+             output.src = $("#ProfilePictureUrl").val();   
         })
 
-        $("#ProfileImageUrl").on("change",function(){    
-            var output = document.getElementById('ProfilePicturePreview');  //calls element id
-            output.src = $(this).val();   //return value
-        })
     </script>
 }

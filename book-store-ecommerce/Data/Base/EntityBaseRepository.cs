@@ -5,7 +5,7 @@ namespace book_store_ecommerce.Data.Base
 {
     public class EntityBaseRepository<T> : IEntityBaseRepository<T> where T : class, IEntityBase, new()
     {
-        // created configuration for writers
+        // created configuration for entities
 
         private readonly AppDbContext _context;
         
@@ -15,18 +15,18 @@ namespace book_store_ecommerce.Data.Base
             _context = context;
         }
 
-        public async Task AddAsync(T entity)
+        public async Task AddAsync(T entity) // create entities
         {
             await _context.Set<T>().AddAsync(entity);
-            await _context.SaveChangesAsync(); //saves to database new writer
+            await _context.SaveChangesAsync(); //saves to database entities
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(int id) // delete entities
         {
             var entity = await _context.Set<T>().FirstOrDefaultAsync(n => n.Id == id);
             EntityEntry entitytEntry = _context.Entry<T>(entity);
             entitytEntry.State = EntityState.Deleted;
-            await _context.SaveChangesAsync(); //saves to database deleted writer
+            await _context.SaveChangesAsync(); //saves to database entities
         }
 
         public async Task<IEnumerable<T>> GetAllAsync()
@@ -41,7 +41,7 @@ namespace book_store_ecommerce.Data.Base
             return result;
         }
 
-        public async Task UpdateAsync(int id, T entity)
+        public async Task UpdateAsync(int id, T entity) // edit entities
         {
             EntityEntry entityEntry = _context.Entry<T>(entity); // returns an instance for a given entity instance.
             entityEntry.State = EntityState.Modified;
