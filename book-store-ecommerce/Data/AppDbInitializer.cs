@@ -347,7 +347,7 @@ namespace book_store_ecommerce.Data
 
                         new Book()
                         {
-                            Name = "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+                            Name = "Atomic Habits: An Easy & Proven Way to Build Good Habits",
                             Description = "No matter your goals, Atomic Habits offers a proven framework for improving--every day. James Clear, one of the world's leading experts on habit formation, reveals practical strategies that will teach you exactly how to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results.",
                             price = 27,
                             Writer = "James Clear",

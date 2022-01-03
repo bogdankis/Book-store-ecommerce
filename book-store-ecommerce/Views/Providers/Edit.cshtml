@@ -1,0 +1,69 @@
+﻿@model Provider
+
+@{
+    ViewData["Title"] = "Update provider";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1>Update provider</h1>
+        </p>
+
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group text-center">
+                    <img class="border-info rounded-circle" style="max-width: 150px;" id="LogoPreview"/>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Logo" class="control-label"></label>
+                    <input asp-for="Logo" class="form-control"/>
+                    <span asp-validation-for="Logo" class="text-danger"></span>
+                </div>
+
+                
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control"/>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control"/>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group d-flex justify-content-between pt-3">
+                                        <a class="btn btn-outline-secondary" asp-action="Index">Show All </a>
+                    <input type="submit" value="Update" class="btn btn-outline-success"/>
+                </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts{
+    <script>
+
+        $(document).ready(function () {
+             var output = document.getElementById('LogoPreview');  //calls element id
+             output.src = $("#Logo").val();   
+        })
+
+        $("#Logo").on("change",function(){    
+            var output = document.getElementById('LogoPreview');  //calls element id
+            output.src = $(this).val();   //return value
+        })
+    </script>
+}
