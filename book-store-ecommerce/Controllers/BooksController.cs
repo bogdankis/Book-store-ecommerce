@@ -19,5 +19,12 @@ namespace book_store_ecommerce.Controllers
             var allBooks = await _service.GetAllAsync(n => n.Provider); //order by name
             return View(allBooks);
         }
+
+        //GET: Books/Details/1
+        public async Task<IActionResult> Details(int id)
+        {
+            var bookDetail = await _service.GetBookByIdAsync(id);
+            return View(bookDetail);
+        }
     }
 }

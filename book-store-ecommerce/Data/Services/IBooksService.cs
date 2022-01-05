@@ -5,5 +5,6 @@ namespace book_store_ecommerce.Data.Services
 {
     public interface IBooksService: IEntityBaseRepository<Book>
     {
+        Task<Book> GetBookByIdAsync(int id);
     }
 }
