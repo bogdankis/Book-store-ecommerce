@@ -40,6 +40,7 @@ namespace book_store_ecommerce.Models
 
         //Publishing House
         public int PublishingHouseId { get; set; }
+        [ForeignKey("PublishingHouseId")]
         public PublishingHouse PublishingHouse { get; set; }
 
     }

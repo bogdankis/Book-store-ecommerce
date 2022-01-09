@@ -20,7 +20,7 @@
                            </div>
                        </div>
                        <div class="col-md-6">
-                           <img src="@item.ImageUrl" width="100%" alt="@item.Name">
+                           <img src="@item.ImageUrl" style="width: 100%;" alt="@item.Name">
                        </div>
                        <div class="col-md-6">
                            <div class="card-body">
@@ -50,7 +50,7 @@
                                <p class="card-text">
                                    <a class="btn btn-primary float-right" asp-action="Details" asp-route-id="@item.Id">
                                        <i class="bi bi-eye-fill"></i>Show Details</a>
-                                   <a class="btn btn-success text-white"><i class="bi bi-cart-plus"></i>Add to Cart($@item.price.ToString("c")</a>
+                                   <a class="btn btn-success text-white"><i class="bi bi-cart-plus"></i>Add to Cart (@item.price.ToString("c"))</a>
                                </p>
                            </div>
                        </div>
@@ -59,3 +59,5 @@
            </div>
     }
 </div>
+
+@await Html.PartialAsync("_CreateItem","Books")

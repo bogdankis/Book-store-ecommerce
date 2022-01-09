@@ -1,10 +1,11 @@
 ﻿using book_store_ecommerce.Data.Base;
+using book_store_ecommerce.Data.ViewModels;
 using book_store_ecommerce.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace book_store_ecommerce.Data.Services
 {
-    public class BooksSerivice: EntityBaseRepository<Book>, IBooksService
+    public class BooksSerivice : EntityBaseRepository<Book>, IBooksService
     {
         private readonly AppDbContext _context;
 
@@ -22,6 +23,20 @@ namespace book_store_ecommerce.Data.Services
                 .FirstOrDefaultAsync(n => n.Id == id);
 
             return bookDetails;
+        }
+
+        public async Task<NewBooksDropdownsVM> GetNewBooksDropdownsValues()
+        {
+            var response = new NewBooksDropdownsVM()
+            {
+                writers = await _context.Writers.OrderBy(n => n.FullName).ToListAsync(),
+                providers = await _context.Providers.OrderBy(n => n.Name).ToListAsync(),
+                publishingHouses = await _context.PublishingHouses.OrderBy(n => n.FullName).ToListAsync(),
+            };
+
+
+
+            return response;
         }
     }
 }
