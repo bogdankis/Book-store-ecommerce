@@ -8,5 +8,6 @@ namespace book_store_ecommerce.Data.Services
     {
         Task<Book> GetBookByIdAsync(int id);
         Task<NewBooksDropdownsVM> GetNewBooksDropdownsValues();
+        Task AddNewBook(NewBookVM data); 
     }
 }

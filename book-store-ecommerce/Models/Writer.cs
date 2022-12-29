@@ -1,11 +1,13 @@
 ﻿using book_store_ecommerce.Data.Base;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace book_store_ecommerce.Models
 {
     public class Writer: IEntityBase
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         
         [Display(Name ="Writer Picture")]

@@ -8,6 +8,7 @@ namespace book_store_ecommerce.Models
     public class Book:IEntityBase
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Display(Name = "Name")]

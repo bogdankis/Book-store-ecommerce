@@ -9,7 +9,7 @@ String connString = builder.Configuration.GetConnectionString("DefaultConnection
 builder.Services.AddScoped<IWritersService, WritersService>();//once per scope
 builder.Services.AddScoped<IPublishingHousesService, PublishingHousesService>();
 builder.Services.AddScoped<IProvidersService, ProvidersService>();
-builder.Services.AddScoped<IBooksService, BooksSerivice>();
+builder.Services.AddScoped<IBooksService, BooksService>();
 // Add services to the container.
 //
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connString));

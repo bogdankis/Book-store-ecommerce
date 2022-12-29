@@ -649,7 +649,7 @@ namespace book_store_ecommerce.Data
                             Name = "Rescue",
                             Description = "When confronted by raging fires or deadly accidents, volunteer fireman Taylor McAden feels compelled to take terrifying risks to save lives",
                             price = 11.55,
-                            Writer = "J. K. Rowling",
+                            Writer = "Nicholas Sparks",
                             BookCategory = BookCategory.Fiction,
                             ISBN = "1538705435",
                             ImageUrl = "https://i.ibb.co/ysHrPpj/book30.jpg",
@@ -662,14 +662,14 @@ namespace book_store_ecommerce.Data
                 }
 
                 // writers and books *********************************************************************************************
-                if (!context.Books.Any())
+                if (!context.Writers_Books.Any())
                 {
                     context.Writers_Books.AddRange(new List<Writer_Book>()
                     {
                         new Writer_Book()
                         {
                             BookId = 1,
-                            WriterId = 1
+                            WriterId = 1 
                         },
 
                         new Writer_Book()

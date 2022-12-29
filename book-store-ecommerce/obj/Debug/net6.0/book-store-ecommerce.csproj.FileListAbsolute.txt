@@ -65,7 +65,6 @@ D:\portofolio\Book-store-ecommerce\book-store-ecommerce\bin\Debug\net6.0\book-st
 D:\portofolio\Book-store-ecommerce\book-store-ecommerce\bin\Debug\net6.0\book-store-ecommerce.deps.json
 D:\portofolio\Book-store-ecommerce\book-store-ecommerce\bin\Debug\net6.0\book-store-ecommerce.runtimeconfig.json
 D:\portofolio\Book-store-ecommerce\book-store-ecommerce\bin\Debug\net6.0\book-store-ecommerce.dll
-D:\portofolio\Book-store-ecommerce\book-store-ecommerce\bin\Debug\net6.0\ref\book-store-ecommerce.dll
 D:\portofolio\Book-store-ecommerce\book-store-ecommerce\bin\Debug\net6.0\book-store-ecommerce.pdb
 D:\portofolio\Book-store-ecommerce\book-store-ecommerce\bin\Debug\net6.0\Humanizer.dll
 D:\portofolio\Book-store-ecommerce\book-store-ecommerce\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
@@ -118,3 +117,9 @@ D:\portofolio\Book-store-ecommerce\book-store-ecommerce\obj\Debug\net6.0\book-st
 D:\portofolio\Book-store-ecommerce\book-store-ecommerce\obj\Debug\net6.0\ref\book-store-ecommerce.dll
 D:\portofolio\Book-store-ecommerce\book-store-ecommerce\obj\Debug\net6.0\book-store-ecommerce.pdb
 D:\portofolio\Book-store-ecommerce\book-store-ecommerce\obj\Debug\net6.0\book-store-ecommerce.genruntimeconfig.cache
+D:\portofolio\Book-store-ecommerce\book-store-ecommerce\obj\Debug\net6.0\staticwebassets\msbuild.book-store-ecommerce.Microsoft.AspNetCore.StaticWebAssets.props
+D:\portofolio\Book-store-ecommerce\book-store-ecommerce\obj\Debug\net6.0\staticwebassets\msbuild.build.book-store-ecommerce.props
+D:\portofolio\Book-store-ecommerce\book-store-ecommerce\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.book-store-ecommerce.props
+D:\portofolio\Book-store-ecommerce\book-store-ecommerce\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.book-store-ecommerce.props
+D:\portofolio\Book-store-ecommerce\book-store-ecommerce\obj\Debug\net6.0\staticwebassets.pack.json
+D:\portofolio\Book-store-ecommerce\book-store-ecommerce\obj\Debug\net6.0\refint\book-store-ecommerce.dll

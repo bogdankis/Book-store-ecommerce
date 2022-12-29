@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace book_store_ecommerce.Data.Services
 {
-    public class BooksSerivice : EntityBaseRepository<Book>, IBooksService
+    public class BooksService : EntityBaseRepository<Book>, IBooksService
     {
         private readonly AppDbContext _context;
 
-        public BooksSerivice(AppDbContext context) : base(context)
+        public BooksService(AppDbContext context) : base(context)
         {
             _context = context;
         }

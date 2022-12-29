@@ -11,8 +11,8 @@ using book_store_ecommerce.Data;
 namespace book_store_ecommerce.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211207182739_Intial4")]
-    partial class Intial4
+    [Migration("20221229161047_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -35,19 +35,15 @@ namespace book_store_ecommerce.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ISBN")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ProviderId")
@@ -57,7 +53,6 @@ namespace book_store_ecommerce.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Writer")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("price")
@@ -99,11 +94,11 @@ namespace book_store_ecommerce.Migrations
 
             modelBuilder.Entity("book_store_ecommerce.Models.PublishingHouse", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("About")
                         .IsRequired()
@@ -111,13 +106,14 @@ namespace book_store_ecommerce.Migrations
 
                     b.Property<string>("FullName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("ProfilePictureUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("PublishingHouses");
                 });
@@ -136,7 +132,8 @@ namespace book_store_ecommerce.Migrations
 
                     b.Property<string>("FullName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("ProfileImageUrl")
                         .IsRequired()

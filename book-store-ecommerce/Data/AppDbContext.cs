@@ -26,6 +26,7 @@ namespace book_store_ecommerce.Data
             modelBuilder.Entity<Writer_Book>().HasOne(b => b.Writer).WithMany(wb => wb.Writers_Books).HasForeignKey(b =>
             b.WriterId);
             base.OnModelCreating(modelBuilder); // necessary for generating default autetification tables
+            
         
         }
 
