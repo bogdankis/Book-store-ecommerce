@@ -7,14 +7,14 @@ namespace book_store_ecommerce.Data.ViewModels
 
         public NewBooksDropdownsVM()
         {
-            providers = new List<Provider>();
-            publishingHouses = new List<PublishingHouse>();
-            writers = new List<Writer>();
+            Providers = new List<Provider>();
+            PublishingHouses = new List<PublishingHouse>();
+            Writers = new List<Writer>();
         }
 
-        public List<PublishingHouse> publishingHouses { get; set; }
-        public List<Provider> providers { get; set; }  
-        public List<Writer> writers { get; set; }   
+        public List<PublishingHouse> PublishingHouses { get; set; }
+        public List<Provider> Providers { get; set; }  
+        public List<Writer> Writers { get; set; }   
 
     }
 }

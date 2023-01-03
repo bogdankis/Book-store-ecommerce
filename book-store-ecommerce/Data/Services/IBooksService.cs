@@ -7,7 +7,7 @@ namespace book_store_ecommerce.Data.Services
     public interface IBooksService: IEntityBaseRepository<Book>
     {
         Task<Book> GetBookByIdAsync(int id);
-        Task<NewBooksDropdownsVM> GetNewBooksDropdownsValues();
-        Task AddNewBook(NewBookVM data); 
+        Task<NewBooksDropdownsVM> GetNewBookDropdownsValues();
+        Task AddNewBookAsync(NewBookVM data); 
     }
 }

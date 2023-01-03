@@ -7,6 +7,8 @@ namespace book_store_ecommerce.Models
 {
     public class NewBookVM
     {
+        public int Id { get; set; }
+
         [Display(Name = "Book name")]
         [Required(ErrorMessage = "Name is required")]
         public String Name { get; set; }
@@ -15,13 +17,10 @@ namespace book_store_ecommerce.Models
         [Required(ErrorMessage = "Description is required")]
         public String Description  { get; set; }
 
-        [Display(Name = "Book price in $")]
+        [Display(Name = "Book Price in $")]
         [Required(ErrorMessage = "Price is required")]
-        public double price { get; set; }
+        public double Price { get; set; }
 
-        [Display(Name = "Select writer")]
-        [Required(ErrorMessage = "Writer is required")]
-        public String Writer { get; set; }
         public BookCategory BookCategory { get; set; }
 
         [Display(Name = "Book ISBN")]
@@ -33,6 +32,8 @@ namespace book_store_ecommerce.Models
         public String ImageUrl { get; set; }
 
         //Relationships
+        [Display(Name = "Select writer(s)")]
+        [Required(ErrorMessage = "Book writer(s) is required")]
         public List<int> WriterIds { get; set; }
 
         [Display(Name = "Select a provider")]

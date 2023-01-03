@@ -44,6 +44,9 @@ namespace book_store_ecommerce.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
                     b.Property<int>("ProviderId")
                         .HasColumnType("int");
 
@@ -52,9 +55,6 @@ namespace book_store_ecommerce.Migrations
 
                     b.Property<string>("Writer")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("price")
-                        .HasColumnType("float");
 
                     b.HasKey("Id");
 

@@ -1,8 +1,8 @@
-﻿using book_store_ecommerce.Data;
-using book_store_ecommerce.Data.Services;
+﻿using book_store_ecommerce.Data.Services;
+using book_store_ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
+
 
 namespace book_store_ecommerce.Controllers
 {
@@ -28,15 +28,34 @@ namespace book_store_ecommerce.Controllers
             return View(bookDetail);
         }
 
-        //GET: Movies/Create
+        //GET: Book/Create
         public async Task<IActionResult> Create()
         {
-            var bookDropwdownData = await _service.GetNewBooksDropdownsValues();
-            ViewBag.Providers = new SelectList(bookDropwdownData.providers, "Id", "Name");
-            ViewBag.PublishingHouses = new SelectList(bookDropwdownData.publishingHouses, "Id", "FullName");
-            ViewBag.Writers = new SelectList(bookDropwdownData.writers, "Id", "FullName");
+            var bookDropdownsData = await _service.GetNewBookDropdownsValues();
+
+            ViewBag.Providers = new SelectList(bookDropdownsData.Providers, "Id", "Name");
+            ViewBag.PublishingHouses = new SelectList(bookDropdownsData.PublishingHouses, "Id", "FullName");
+            ViewBag.Writers = new SelectList(bookDropdownsData.Writers, "Id", "FullName");
 
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(NewBookVM book)
+        {
+            if (!ModelState.IsValid)
+           {
+                var bookDropdownsData = await _service.GetNewBookDropdownsValues();
+
+                ViewBag.Providers = new SelectList(bookDropdownsData.Providers, "Id", "Name");
+                ViewBag.PublishingHouses = new SelectList(bookDropdownsData.PublishingHouses, "Id", "FullName");
+                ViewBag.Writers = new SelectList(bookDropdownsData.Writers, "Id", "FullName");
+                return View(book);
+           }
+            await _service.AddNewBookAsync(book);
+            return RedirectToAction(nameof(Index));
+        } 
+            
+
     }
 }

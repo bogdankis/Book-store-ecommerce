@@ -59,7 +59,7 @@
                                     <div class="column text-center">
                                         <img class="border-info rounded-circle" src="@writer.Writer.ProfileImageUrl" style="max-width: 150px"/>
                                         <br/>
-                                        <a asp-controller="Writers" asp-action="Details" asp-route-id="@writer.Writer.Id">@writer.Writer.FullName</a>
+                                        <a asp-controller="Writers" asp-action="Details" asp-route-id="@writer.WriterId">@writer.Writer.FullName</a>
                                     </div>
                                 }
                             </div>
@@ -73,7 +73,7 @@
                                    <a class="btn btn-primary float-right" asp-action="Index">
                                        Back to List
                                        </a>
-                                   <a class="btn btn-success text-white"><i class="bi bi-cart-plus"></i>Add to Cart($@Model.price.ToString("c")</a>
+                                   <a class="btn btn-success text-white"><i class="bi bi-cart-plus"></i>Add to Cart($@Model.Price.ToString("c")</a>
                                </p>
                            </div>
                        </div>

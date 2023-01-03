@@ -8,7 +8,6 @@ namespace book_store_ecommerce.Models
     public class Book:IEntityBase
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Display(Name = "Name")]
@@ -18,7 +17,7 @@ namespace book_store_ecommerce.Models
         public String Description  { get; set; }
 
         [Display(Name = "Price")]
-        public double price { get; set; }
+        public double Price { get; set; }
 
         [Display(Name = "Writer")]
         public String Writer { get; set; }

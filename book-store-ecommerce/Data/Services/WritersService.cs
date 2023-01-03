@@ -6,7 +6,7 @@ namespace book_store_ecommerce.Data.Services
 {
     public class WritersService : EntityBaseRepository<Writer>, IWritersService
     {
-        private readonly AppDbContext _context;
+        
         public WritersService(AppDbContext context): base(context) //pass appdbcontext to baseclass
         {
         }

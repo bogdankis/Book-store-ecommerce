@@ -61,7 +61,7 @@ namespace book_store_ecommerce.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    price = table.Column<double>(type: "float", nullable: false),
+                    Price = table.Column<double>(type: "float", nullable: false),
                     Writer = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     BookCategory = table.Column<int>(type: "int", nullable: false),
                     ISBN = table.Column<string>(type: "nvarchar(max)", nullable: true),

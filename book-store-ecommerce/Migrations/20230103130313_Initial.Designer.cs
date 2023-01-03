@@ -11,7 +11,7 @@ using book_store_ecommerce.Data;
 namespace book_store_ecommerce.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221229161047_Initial")]
+    [Migration("20230103130313_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,6 +46,9 @@ namespace book_store_ecommerce.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
                     b.Property<int>("ProviderId")
                         .HasColumnType("int");
 
@@ -54,9 +57,6 @@ namespace book_store_ecommerce.Migrations
 
                     b.Property<string>("Writer")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("price")
-                        .HasColumnType("float");
 
                     b.HasKey("Id");
 

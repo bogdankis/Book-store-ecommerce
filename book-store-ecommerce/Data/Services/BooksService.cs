@@ -14,6 +14,37 @@ namespace book_store_ecommerce.Data.Services
             _context = context;
         }
 
+        public async Task AddNewBookAsync(NewBookVM data)
+        {
+            var newBook = new Book()
+            {
+                Name = data.Name,
+                Description = data.Description,
+                Price = data.Price,
+                ImageUrl = data.ImageUrl,
+                ProviderId = data.ProviderId,
+                ISBN = data.ISBN,
+                BookCategory = data.BookCategory,
+                PublishingHouseId = data.PublishingHouseId
+            };
+            await _context.Books.AddAsync(newBook);
+            await _context.SaveChangesAsync();
+
+            //ADD BOOK WRITERS
+           
+            foreach (var writerId in data.WriterIds)
+            {
+                var newWriterBook = new Writer_Book()
+                {
+                    BookId = newBook.Id,
+                    WriterId = writerId
+
+                };
+                await _context.Writers_Books.AddAsync(newWriterBook);
+            }
+            await _context.SaveChangesAsync();
+        }
+
         public async Task<Book> GetBookByIdAsync(int id)
         {
             var bookDetails = await _context.Books
@@ -25,13 +56,13 @@ namespace book_store_ecommerce.Data.Services
             return bookDetails;
         }
 
-        public async Task<NewBooksDropdownsVM> GetNewBooksDropdownsValues()
+        public async Task<NewBooksDropdownsVM> GetNewBookDropdownsValues()
         {
             var response = new NewBooksDropdownsVM()
             {
-                writers = await _context.Writers.OrderBy(n => n.FullName).ToListAsync(),
-                providers = await _context.Providers.OrderBy(n => n.Name).ToListAsync(),
-                publishingHouses = await _context.PublishingHouses.OrderBy(n => n.FullName).ToListAsync(),
+                Writers = await _context.Writers.OrderBy(n => n.FullName).ToListAsync(),
+                Providers = await _context.Providers.OrderBy(n => n.Name).ToListAsync(),
+                PublishingHouses = await _context.PublishingHouses.OrderBy(n => n.FullName).ToListAsync(),
             };
 
 
