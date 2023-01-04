@@ -54,8 +54,55 @@ namespace book_store_ecommerce.Controllers
            }
             await _service.AddNewBookAsync(book);
             return RedirectToAction(nameof(Index));
-        } 
-            
+        }
+
+        //GET: Book/Edit
+        public async Task<IActionResult> Edit(int id)
+        {
+            var bookDetails = await _service.GetBookByIdAsync(id);
+            if (bookDetails == null) return View("NotFound"); // if book doesn t exist show Notfound page
+
+            var response = new NewBookVM()
+            {
+                Id = bookDetails.Id,
+                Name = bookDetails.Name,
+                Description = bookDetails.Description,
+                Price = bookDetails.Price,
+                ISBN = bookDetails.ISBN,
+                ImageUrl = bookDetails.ImageUrl,
+                BookCategory = bookDetails.BookCategory,
+                PublishingHouseId = bookDetails.PublishingHouseId,
+                ProviderId = bookDetails.ProviderId,
+                WriterIds = bookDetails.Writers_Books.Select(n => n.WriterId).ToList(),
+            };
+
+            var bookDropdownsData = await _service.GetNewBookDropdownsValues();
+
+            ViewBag.Providers = new SelectList(bookDropdownsData.Providers, "Id", "Name");
+            ViewBag.PublishingHouses = new SelectList(bookDropdownsData.PublishingHouses, "Id", "FullName");
+            ViewBag.Writers = new SelectList(bookDropdownsData.Writers, "Id", "FullName");
+
+            return View(response);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, NewBookVM book)
+        {
+            if (id != book.Id) return View("NotFound"); // if book doesn t exist show Notfound page
+
+
+            if (!ModelState.IsValid)
+            {
+                var bookDropdownsData = await _service.GetNewBookDropdownsValues();
+
+                ViewBag.Providers = new SelectList(bookDropdownsData.Providers, "Id", "Name");
+                ViewBag.PublishingHouses = new SelectList(bookDropdownsData.PublishingHouses, "Id", "FullName");
+                ViewBag.Writers = new SelectList(bookDropdownsData.Writers, "Id", "FullName");
+                return View(book);
+            }
+            await _service.UpdateBookAsync(book);
+            return RedirectToAction(nameof(Index));
+        }
 
     }
 }

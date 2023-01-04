@@ -2,10 +2,10 @@
 
 namespace book_store_ecommerce.Data.ViewModels
 {
-    public class NewBooksDropdownsVM
+    public class NewBookDropdownsVM
     {
 
-        public NewBooksDropdownsVM()
+        public NewBookDropdownsVM()
         {
             Providers = new List<Provider>();
             PublishingHouses = new List<PublishingHouse>();
