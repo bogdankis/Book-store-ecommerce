@@ -21,6 +21,18 @@ namespace book_store_ecommerce.Controllers
             return View(allBooks);
         }
 
+        public async Task<IActionResult> Filter(string searchString) 
+        {
+            var allBooks = await _service.GetAllAsync(n => n.Provider); //order by name
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                var filteredResult = allBooks.Where(n => n.Name.ToLower().Contains(searchString.ToLower())).ToList();
+
+                return View("Index",filteredResult);
+            }
+            return View("Index", allBooks);
+        }
+
         //GET: Books/Details/1
         public async Task<IActionResult> Details(int id)
         {
