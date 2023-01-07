@@ -36,5 +36,12 @@ namespace book_store_ecommerce.Data
         public DbSet<Provider> Providers { get; set; }
         public DbSet<PublishingHouse> PublishingHouses { get; set; }
 
+
+        //Orders related
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<ShoppingCartitem> ShoppingCartItems { get; set;}
+
+
     }
 }
