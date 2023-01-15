@@ -2,7 +2,7 @@
 
 namespace book_store_ecommerce.Models
 {
-    public class ShoppingCartitem
+    public class ShoppingCartItem
     {
         [Key]
         public int Id { get; set; }

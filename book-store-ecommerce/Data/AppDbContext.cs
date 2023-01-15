@@ -40,7 +40,7 @@ namespace book_store_ecommerce.Data
         //Orders related
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
-        public DbSet<ShoppingCartitem> ShoppingCartItems { get; set;}
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set;}
 
 
     }

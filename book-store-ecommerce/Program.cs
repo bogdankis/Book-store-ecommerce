@@ -1,4 +1,5 @@
 using book_store_ecommerce.Data;
+using book_store_ecommerce.Data.Cart;
 using book_store_ecommerce.Data.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +11,10 @@ builder.Services.AddScoped<IWritersService, WritersService>();//once per scope
 builder.Services.AddScoped<IPublishingHousesService, PublishingHousesService>();
 builder.Services.AddScoped<IProvidersService, ProvidersService>();
 builder.Services.AddScoped<IBooksService, BooksService>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>(); //added singleton service
+builder.Services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
+
+builder.Services.AddSession();
 // Add services to the container.
 //
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connString));
@@ -29,6 +34,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseSession();
 
 app.UseAuthorization();
 
