@@ -50,7 +50,7 @@
                                <p class="card-text">
                                    <a class="btn btn-primary float-right" asp-action="Details" asp-route-id="@item.Id">
                                        <i class="bi bi-eye-fill"></i>Show Details</a>
-                                   <a class="btn btn-success text-white"><i class="bi bi-cart-plus"></i>Add to Cart (@item.Price.ToString("c"))</a>
+                                   <a class="btn btn-success text-white" asp-controller="Orders" asp-action="AddItemToShoppingCart" asp-route-id="@item.Id"><i class="bi bi-cart-plus"></i>Add to Cart (@item.Price.ToString("c"))</a>
                                </p>
                            </div>
                        </div>

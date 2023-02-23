@@ -1,7 +1,6 @@
-﻿using book_store_ecommerce.Migrations;
+﻿
 using book_store_ecommerce.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace book_store_ecommerce.Data.Cart
 {
@@ -23,7 +22,7 @@ namespace book_store_ecommerce.Data.Cart
             var context = services.GetService<AppDbContext>();
 
         
-            string cartId = session.GetString("cartId") ?? Guid.NewGuid().ToString(); // if cart id null generate new cart id
+            string cartId = session.GetString("CartId") ?? Guid.NewGuid().ToString(); // if cart id null generate new cart id
             session.SetString("CartId", cartId);
             return new ShoppingCart(context) { ShoppingCartId = cartId};
         }
@@ -33,7 +32,7 @@ namespace book_store_ecommerce.Data.Cart
         {
             var shoppingCartItem = _context.ShoppingCartItems.FirstOrDefault(n => n.Book.Id == book.Id && n.ShoppingCartId == ShoppingCartId);
 
-            if(shoppingCartItem != null)
+            if(shoppingCartItem == null)
             {
                 shoppingCartItem = new ShoppingCartItem()
                 {
@@ -52,6 +51,7 @@ namespace book_store_ecommerce.Data.Cart
             _context.SaveChanges();
         }
 
+
         public void RemoveItemFromCart(Book book)
         {
             var shoppingCartItem = _context.ShoppingCartItems.FirstOrDefault(n => n.Book.Id == book.Id && n.ShoppingCartId == ShoppingCartId);
@@ -66,7 +66,7 @@ namespace book_store_ecommerce.Data.Cart
                 else
                 {
 
-                _context.ShoppingCartItems.Add(shoppingCartItem);
+                _context.ShoppingCartItems.Remove(shoppingCartItem);
                 }
 
             }
