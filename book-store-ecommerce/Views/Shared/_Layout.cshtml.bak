@@ -44,22 +44,13 @@
                         </li>
                     </ul>
 
-
-
                     <form class="form-inline my-2 my-lg-0 d-flex" asp-controller="Books" asp-action="Filter" style="padding-right: 25px;">
                         <input name="searchString" type="text" class="form-control" placeholder="Search a book.." />
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
                     </form>
-
-                 <!--  <div class="d-md-inline">
-                    <div class="bi-cart-check-fill" style="list-style: none">
-                    </div>
-                   </div>
-                   -->
-
-                                       <ul class="navbar-nav">
-                        @await Component.InvokeAsync("ShoppingCartSummary") 
+                                        <ul class=""><span> @await Component.InvokeAsync("ShoppingCartSummary")</span>
                     </ul>
+
                 </div>
             </div>
         </nav>

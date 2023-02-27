@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wOhnN/Yp3oJEDVSe6RcX/IWcodJvm01uLv0PJpnIBUeI0ma9QvQnmwB5x8yjEqqEcxn5AnAohCaO3TeCMwQh4w==",
+  "dgSpecHash": "a93+HyIS+hFh7Arg2oOUr7lO8qiZi5mX2vzZlVUiRmNbtdU2PvrSJ1oNpWoClmRjI8tBBgMeC/E/iXAAysXX6w==",
   "success": true,
   "projectFilePath": "D:\\portofolio\\Book-store-ecommerce\\book-store-ecommerce\\book-store-ecommerce.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Meanwhile\\.nuget\\packages\\bootstrap\\5.2.3\\bootstrap.5.2.3.nupkg.sha512",
     "C:\\Users\\Meanwhile\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Meanwhile\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Meanwhile\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
