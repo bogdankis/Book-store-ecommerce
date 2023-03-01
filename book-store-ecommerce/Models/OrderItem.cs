@@ -11,10 +11,11 @@ namespace book_store_ecommerce.Models
         public double Price { get; set; }
 
         public int BookId { get; set; }
-        [ForeignKey("BooId")]
+        [ForeignKey("BookId")]
 
         public virtual Book Book {get; set; }
-
+        public int OrderId { get; set; }
+        [ForeignKey("OrderId")]
         public virtual Order Order { get; set; }
     }
 }

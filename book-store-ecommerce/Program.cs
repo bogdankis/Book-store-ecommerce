@@ -13,6 +13,7 @@ builder.Services.AddScoped<IProvidersService, ProvidersService>();
 builder.Services.AddScoped<IBooksService, BooksService>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>(); //added singleton service
 builder.Services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
+builder.Services.AddScoped<IOrdersService, OrdersService>();
 
 builder.Services.AddSession();
 // Add services to the container.
