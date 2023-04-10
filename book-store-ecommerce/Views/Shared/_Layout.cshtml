@@ -47,7 +47,7 @@
 
 
                     <form class="form-inline my-2 my-lg-0 d-flex" asp-controller="Books" asp-action="Filter" style="padding-right: 25px;">
-                        <input name="searchString" type="text" class="form-control" placeholder="Search a book.." />
+                        <input name="searchString" type="text" class="form-control" placeholder="Search for a book.." />
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
                     </form>
 
@@ -58,8 +58,8 @@
                    -->
 
                                        <ul class="navbar-nav">
-                        @await Component.InvokeAsync("ShoppingCartSummary") 
-                    </ul>
+                        @await Component.InvokeAsync("ShoppingCartSummary")                    
+                        </ul>
                 </div>
             </div>
         </nav>

@@ -35,7 +35,7 @@ namespace book_store_ecommerce.Data.Services
                 {
                     Amount = item.Amount,
                     BookId = item.Book.Id,
-                    OrderId = item.Id,
+                    OrderId = order.Id,
                     Price = item.Book.Price
 
                 };

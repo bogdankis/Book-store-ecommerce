@@ -13,9 +13,9 @@ namespace book_store_ecommerce.Models
         public int BookId { get; set; }
         [ForeignKey("BookId")]
 
-        public virtual Book Book {get; set; }
+        public Book Book {get; set; }
         public int OrderId { get; set; }
         [ForeignKey("OrderId")]
-        public virtual Order Order { get; set; }
+        public Order Order { get; set; }
     }
 }
