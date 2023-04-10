@@ -39,7 +39,7 @@
                         <td class="align-middle">
                             @order.OrderItems.Select(b => b.Book.Price * b.Amount).Sum().ToString("c")
                         </td>
-                        <td class="align-middle"> - </td>
+                        <td class="align-middle"> - -</td>
                     </tr>
                 }
             </tbody>
