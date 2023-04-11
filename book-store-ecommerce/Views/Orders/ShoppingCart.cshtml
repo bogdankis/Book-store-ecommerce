@@ -60,8 +60,8 @@
 @*                <a class="btn btn-outline-primary" asp-action="CompleteOrder">
                     Complete order
                 </a>*@
-                <div id="paypal-btn"></div>
-                |
+                <div id="paypal-btn" style="padding: 5px"></div>
+                
                 <a class="btn btn-outline-success" asp-controller="Books" asp-action="Index"> 
                     Add more items
                 </a>
@@ -75,6 +75,9 @@
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 
         <script>
+
+            let _total = @Html.Raw(Model.ShoppingCartTotal);
+
             paypal.Button.render({
                 //Configure environment
                 env: 'sandbox',
@@ -92,7 +95,14 @@
 
                 //Set up a payment
                 payment: function(data, actions){
-                    console.log("Payment set up");
+                    return actions.payment.create({
+                        transactions: [{
+                            amount: {
+                                total: _total,
+                                currency: 'EUR'
+                            }
+                        }]
+                    });
                 },
                 //Execute payment
                 onAuthorize: function(data, actions){
