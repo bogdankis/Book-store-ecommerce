@@ -34,7 +34,7 @@
                            asp-route-id="@item.Book.Id">
                             <i class="bi bi-cart-dash"></i>
                         </a>
-                        |
+                        <span style="padding: 5px"></span>
                         <a class="text-success" asp-controller="Orders" asp-action="AddItemToShoppingCart"
                            asp-route-id="@item.Book.Id">
                             <i class="bi bi-cart-plus"></i>
@@ -57,10 +57,12 @@
 
         <div class="text-center">
             <div class="btn-group">
-                <a class="btn btn-outline-primary" asp-action="CompleteOrder">
+@*                <a class="btn btn-outline-primary" asp-action="CompleteOrder">
                     Complete order
-                </a>
-                <a class="btn btn-outline-success" asp-controller="Books" asp-action="Index">
+                </a>*@
+                <div id="paypal-btn"></div>
+                |
+                <a class="btn btn-outline-success" asp-controller="Books" asp-action="Index"> 
                     Add more items
                 </a>
             </div>
@@ -68,4 +70,36 @@
 
     </div>
 </div>
+
+@section Scripts{
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+        <script>
+            paypal.Button.render({
+                //Configure environment
+                env: 'sandbox',
+                client: {
+                    sandbox: 'AeifsIInW2ZC8-mJ-dalqeCXEkdqp6T0tSBqhUbpLx0C0q-jf0vB-3j9zS11VVISYB57Kmvcn0AAlOyx'
+                },
+                // Customize button
+                locale: 'en_US',
+                style: {
+                    size: 'small',
+                    color: 'gold',
+                    shape: 'pill'
+                },
+                commit: true,    //paynow checkout flow
+
+                //Set up a payment
+                payment: function(data, actions){
+                    console.log("Payment set up");
+                },
+                //Execute payment
+                onAuthorize: function(data, actions){
+                    console.log("Payment executed");
+                }
+
+            }, '#paypal-btn'); // where do we want to render -    <div id="paypal-btn"></div>
+        </script>
+}
 
