@@ -106,7 +106,10 @@
                 },
                 //Execute payment
                 onAuthorize: function(data, actions){
-                    console.log("Payment executed");
+                    return actions.payment.execute().then(function() {
+                        var url = '@Url.Action("CompleteOrder","Orders", new { })'
+                        window.location.href = url;
+                    });
                 }
 
             }, '#paypal-btn'); // where do we want to render -    <div id="paypal-btn"></div>

@@ -118,3 +118,4 @@ D:\portofolio\Book-store-ecommerce\book-store-ecommerce\obj\Debug\net6.0\ref\boo
 D:\portofolio\Book-store-ecommerce\book-store-ecommerce\obj\Debug\net6.0\book-store-ecommerce.pdb
 D:\portofolio\Book-store-ecommerce\book-store-ecommerce\obj\Debug\net6.0\book-store-ecommerce.genruntimeconfig.cache
 D:\portofolio\Book-store-ecommerce\book-store-ecommerce\bin\Debug\net6.0\ref\book-store-ecommerce.dll
+D:\portofolio\Book-store-ecommerce\book-store-ecommerce\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
