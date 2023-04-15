@@ -1,4 +1,5 @@
 ﻿using book_store_ecommerce.Data;
+using book_store_ecommerce.Data.ViewModels;
 using book_store_ecommerce.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -19,9 +20,10 @@ namespace book_store_ecommerce.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Login()
         {
-            return View();
+            var response = new LoginVM();
+            return View(response);
         }
     }
 }
