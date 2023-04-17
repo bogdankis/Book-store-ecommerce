@@ -26,6 +26,7 @@ namespace book_store_ecommerce.Controllers
             return View(response);
         }
 
+
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM loginVM)
         {
@@ -52,6 +53,12 @@ namespace book_store_ecommerce.Controllers
             }
             TempData["Error"] = "Wrong credentials. Please try again!";
             return View(loginVM);
+        }
+
+        public IActionResult Register()
+        {
+            var response = new RegisterVM();
+            return View(response);
         }
     }
 }
