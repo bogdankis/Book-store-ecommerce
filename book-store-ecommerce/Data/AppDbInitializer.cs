@@ -845,7 +845,7 @@ namespace book_store_ecommerce.Data
 
                 //Users
                 var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-                string adminUserEmail = "admin@books.com";
+                string adminUserEmail = "admin@bookstore.com";
                 var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
                 if(adminUser == null)
                 {
@@ -856,11 +856,11 @@ namespace book_store_ecommerce.Data
                         Email = adminUserEmail,
                         EmailConfirmed = true
                     };
-                await userManager.CreateAsync(newAdminUser, "Coding!1234");  //username and password
+                await userManager.CreateAsync(newAdminUser, "Programming!1234");  //username and password
                 await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
                 }
 
-                string appUserEmail = "user@books.com";
+                string appUserEmail = "user@bookstore.com";
                 var appUser = await userManager.FindByEmailAsync(appUserEmail);
                 if (appUser == null)
                 {
