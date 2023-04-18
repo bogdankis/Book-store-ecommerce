@@ -57,17 +57,22 @@
                    </div>
                    -->
 
-                                       <ul class="navbar-nav">
+                       <ul class="navbar-nav">
                         @await Component.InvokeAsync("ShoppingCartSummary")                    
-                        </ul>
+                       </ul>
 
                         <a class="btn btn-outline-success my-2 my-sm-0" asp-controller="Account" asp-action="Login">
                             <i class="bi bi-box-arrow-in-right">Login</i>
                         </a>
 
+                        <span syle="padding: 5px;"></span>
+
+
                         <a class="btn btn-outline-primary my-2 my-sm-0" asp-controller="Account" asp-action="Register">
                             <i class="bi bi-person-plus">Register</i>
                         </a>
+
+                        <span syle="padding: 5px;"></span>
 
                         @*User profile section*@
                         <div class="dropdown">
@@ -83,6 +88,13 @@
                                 </li>
                             </ul>
                         </div>
+
+                        <span style="padding: 5px;"></span>
+                        <form asp-controller="Account" asp-action="Logout">
+                            <button class="btn btn-outline-danger my-2 my-sm-0">
+                                <i class="bi bi-box-arrow-in-right"> Log out</i>
+                            </button>
+                        </form>
                 </div>
             </div>
         </nav>
