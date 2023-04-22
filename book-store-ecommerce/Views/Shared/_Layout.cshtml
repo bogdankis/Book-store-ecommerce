@@ -61,40 +61,8 @@
                         @await Component.InvokeAsync("ShoppingCartSummary")                    
                        </ul>
 
-                        <a class="btn btn-outline-success my-2 my-sm-0" asp-controller="Account" asp-action="Login">
-                            <i class="bi bi-box-arrow-in-right">Login</i>
-                        </a>
+                      <partial name="_Identity.cshtml"></partial>
 
-                        <span syle="padding: 5px;"></span>
-
-
-                        <a class="btn btn-outline-primary my-2 my-sm-0" asp-controller="Account" asp-action="Register">
-                            <i class="bi bi-person-plus">Register</i>
-                        </a>
-
-                        <span syle="padding: 5px;"></span>
-
-                        @*User profile section*@
-                        <div class="dropdown">
-                            <button class="btn alert-success dropdown-toggle" type="button" id="profile-btn" data-toggle="dropdown" 
-                            aria-expanded="false">
-                            <i class="bi bi-person-badge"></i> Hello User
-                        </button>
-                            <ul class="dropdown-menu" aria-labelledby="profile-btn">
-                                <li>
-                                    <a class="dropwdown-item" asp-controller="Orders" asp-action="Index">
-                                        <i class="bi bi-list">Orders</i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <span style="padding: 5px;"></span>
-                        <form asp-controller="Account" asp-action="Logout">
-                            <button class="btn btn-outline-danger my-2 my-sm-0">
-                                <i class="bi bi-box-arrow-in-right"> Log out</i>
-                            </button>
-                        </form>
                 </div>
             </div>
         </nav>
