@@ -22,7 +22,6 @@
                        <div class="col-md-8">
                            <div class="card-body">
                                <p class="cart-text">@Model.Name</p>
-                               <p class="cart-text"><b>Writer: </b>@Model.Writer</p>
                                <p class="cart-text">
                                    <b>Provider: </b>
                                    <a asp-controller="Providers" asp-action="Details" asp-route-id="@Model.ProviderId">
@@ -69,11 +68,12 @@
 
                        <div class="col-md-12">
                            <div class="card-footer">
-                               <p class="card-text">
+                        <p class="card-text d-flex justify-content-between">
+                            <a class="btn btn-success text-white" asp-controller="Orders" asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id"><i class="bi bi-cart-plus"></i>Add to Cart($@Model.Price.ToString("c")</a>
                                    <a class="btn btn-primary float-right" asp-action="Index">
                                        Back to List
                                        </a>
-                                   <a class="btn btn-success text-white" asp-controller="Orders" asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id"><i class="bi bi-cart-plus"></i>Add to Cart($@Model.Price.ToString("c")</a>
+                                  
                                </p>
                            </div>
                        </div>

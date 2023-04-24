@@ -40,7 +40,10 @@
 
                 <div class="form-group d-flex justify-content-between pt-3">
                                         <a class="btn btn-outline-secondary" asp-action="Index">Show All </a>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                    {
                                         <a class="btn btn-outline-success" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                    }
                 </div>
 
             </div>

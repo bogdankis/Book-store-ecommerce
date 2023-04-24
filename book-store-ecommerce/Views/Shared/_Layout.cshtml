@@ -28,20 +28,26 @@
                             <a class="nav-link text-dark" asp-controller="Books" asp-action="Index"><i class="badge-alert-info bi bi-book"></i>Books</a>
                         </li>
 
-                        <li class="nav-item dropdown show">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" 
-                               aria-haspopup="true" aria-expanded="false">
-                                <i class="bi bi-gear"></i>Management
-                        </a>
 
-                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" asp-controller="Providers" asp-action="Index"><i class="bi bi-truck"> Providers</i></a>
-                            <a class="dropdown-item" asp-controller="PublishingHouses" asp-action="Index"><i class="bi bi-house-door"> Publishing Houses</i></a>
-                            <a class="dropdown-item" asp-controller="Writers" asp-action="Index"><i class="bi bi-pen-fill"> Writers</i></a>
-                        </div>
+                        @if(User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item dropdown show">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    <i class="bi bi-gear"></i>Management
+                                </a>
 
 
-                        </li>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" asp-controller="Providers" asp-action="Index"><i class="bi bi-truck"> Providers</i></a>
+                                    <a class="dropdown-item" asp-controller="PublishingHouses" asp-action="Index"><i class="bi bi-house-door"> Publishing Houses</i></a>
+                                    <a class="dropdown-item" asp-controller="Writers" asp-action="Index"><i class="bi bi-pen-fill"> Writers</i></a>
+                                </div>
+
+
+                            </li>
+                        }
+
                     </ul>
 
 
