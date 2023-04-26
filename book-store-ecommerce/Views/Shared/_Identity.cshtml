@@ -31,6 +31,16 @@ else
                     <i class="bi bi-list">Orders</i>
                 </a>
             </li>
+
+            @if (User.IsInRole("Admin"))
+            {
+                <li>
+                    <a class="dropwdown-item" asp-controller="Account" asp-action="Users">
+                        <i class="bi bi-people">Users</i>
+                    </a>
+                </li>
+            }
+   
         </ul>
     </div>
 
