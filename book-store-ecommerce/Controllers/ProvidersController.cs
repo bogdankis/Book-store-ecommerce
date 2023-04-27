@@ -1,11 +1,13 @@
 ﻿using book_store_ecommerce.Data;
 using book_store_ecommerce.Data.Services;
 using book_store_ecommerce.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace book_store_ecommerce.Controllers
 {
+    [Authorize]
     public class ProvidersController : Controller
     {
 
@@ -16,6 +18,8 @@ namespace book_store_ecommerce.Controllers
 
             _service = service;
         }
+
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var allProviders = await _service.GetAllAsync();
@@ -40,6 +44,7 @@ namespace book_store_ecommerce.Controllers
         }
 
         //Get: Providers/Details/1
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var providersDetails = await _service.GetByIdAsync(id);

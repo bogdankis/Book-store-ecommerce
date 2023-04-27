@@ -1,11 +1,13 @@
 ﻿using book_store_ecommerce.Data;
 using book_store_ecommerce.Data.Services;
 using book_store_ecommerce.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace book_store_ecommerce.Controllers
 {
+    [Authorize]  //check if you're logged 
     public class WritersController : Controller
     {
         private readonly IWritersService _service; 
@@ -14,7 +16,7 @@ namespace book_store_ecommerce.Controllers
         {
             _service = service;
         }
-
+        [AllowAnonymous]  // allow unauthenticated users
         public async Task<IActionResult> Index() //Show all writers
         {
             var data = await _service.GetAllAsync();
@@ -38,9 +40,10 @@ namespace book_store_ecommerce.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        
+
 
         //Get: Writers/Details/1
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var writerDetails = await _service.GetByIdAsync(id);

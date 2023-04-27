@@ -1,11 +1,13 @@
 ﻿using book_store_ecommerce.Data.Services;
 using book_store_ecommerce.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 
 namespace book_store_ecommerce.Controllers
 {
+    [Authorize]
     public class BooksController : Controller
     {
         private readonly IBooksService _service;
@@ -15,12 +17,14 @@ namespace book_store_ecommerce.Controllers
             _service = service;
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var allBooks = await _service.GetAllAsync(n => n.Provider); //order by name
             return View(allBooks);
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> Filter(string searchString) 
         {
             var allBooks = await _service.GetAllAsync(n => n.Provider); //order by name
@@ -34,6 +38,7 @@ namespace book_store_ecommerce.Controllers
         }
 
         //GET: Books/Details/1
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var bookDetail = await _service.GetBookByIdAsync(id);

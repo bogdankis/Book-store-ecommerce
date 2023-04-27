@@ -1,11 +1,13 @@
 ﻿using book_store_ecommerce.Data;
 using book_store_ecommerce.Data.Services;
 using book_store_ecommerce.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace book_store_ecommerce.Controllers
 {
+    [Authorize]
     public class PublishingHousesController : Controller
     {
         private readonly IPublishingHousesService _service;
@@ -14,6 +16,8 @@ namespace book_store_ecommerce.Controllers
         {
             _service = service;
         }
+
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var publishingHouses = await _service.GetAllAsync();
@@ -26,6 +30,7 @@ namespace book_store_ecommerce.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Create([Bind("ProfilePictureUrl,FullName,About")] PublishingHouse publishingHouse)
         {
@@ -38,6 +43,7 @@ namespace book_store_ecommerce.Controllers
         }
 
         //GET: PublishingHouses/details/1
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id) //check if data exists in db, if exits return to view
         {
             var publishingHousesDetails = await _service.GetByIdAsync(id);

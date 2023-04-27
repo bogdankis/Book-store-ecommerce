@@ -1,11 +1,13 @@
 ﻿using book_store_ecommerce.Data.Cart;
 using book_store_ecommerce.Data.Services;
 using book_store_ecommerce.Data.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace book_store_ecommerce.Controllers
 {
+    [Authorize]
     public class OrdersController : Controller
     {
 
