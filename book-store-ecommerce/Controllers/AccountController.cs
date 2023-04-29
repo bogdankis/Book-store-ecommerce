@@ -104,5 +104,10 @@ namespace book_store_ecommerce.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index","Books");
         }
+
+        public IActionResult AccessDenied(String ReturnUrl)
+        {
+            return View();
+        }
     }
 }

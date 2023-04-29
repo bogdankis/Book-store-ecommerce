@@ -1,5 +1,6 @@
 ﻿using book_store_ecommerce.Data;
 using book_store_ecommerce.Data.Services;
+using book_store_ecommerce.Data.Static;
 using book_store_ecommerce.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace book_store_ecommerce.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = UserRoles.Admin)]
     public class PublishingHousesController : Controller
     {
         private readonly IPublishingHousesService _service;
