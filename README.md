@@ -1,8 +1,7 @@
-# Book-store-ecommerce
-# .NET 6 MVC Project README
+# .NET 7 MVC Book store
 
 ## Description
-📚 This repository contains a .NET 6 MVC project for a book store where users can browse and purchase books through PayPal. The project utilizes Microsoft SQL Server 2022 as the backend database. It incorporates various dependencies including Bootstrap 5.2.3 for front-end styling and Microsoft's ASP.NET Core Identity framework for authentication and authorization. Additionally, the project leverages Entity Framework Core for ORM functionalities.
+📚 This repository contains a .NET 7 MVC project for a book store where users can browse and purchase books through PayPal. The project utilizes Microsoft SQL Server 2022 as the backend database. It incorporates various dependencies including Bootstrap 5.2.3 for front-end styling and Microsoft's ASP.NET Core Identity framework for authentication and authorization. Additionally, the project leverages Entity Framework Core for ORM functionalities.
 
 ## Preview UI
 ![Homepage Guest](images/homepage.png)
