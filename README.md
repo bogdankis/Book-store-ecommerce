@@ -89,6 +89,3 @@ Contributions to the project are welcome. Feel free to open issues and pull requ
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
-
-## Contact
-For any inquiries or support, please contact [your-email@example.com](mailto:your-email@example.com).
