@@ -84,6 +84,14 @@ Ensure the following prerequisites are installed on your system before running t
 1. After completing the installation steps, run the project in Visual Studio.
 2. The application will start and be accessible via your web browser.
 
+## Credentials to Login as Admin
+email: admin@bookstore.com
+password: Programming!1234
+
+## Credentials to Login as User
+email: user@bookstore.com
+password: Programming!1234
+
 ## Contributing
 Contributions to the project are welcome. Feel free to open issues and pull requests.
 
